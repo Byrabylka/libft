@@ -19,8 +19,12 @@ size_t	ft_strlcat(char *dst, const char *src, size_t count);
 int		ft_toupper(int ch);
 int		ft_tolower(int ch);
 char	*ft_strchr(const char *str, int ch);
+char	*ft_strrchr(const char *str, int ch);
 int		ft_strncmp( const char *s1, const char *s2, size_t n);
 void	*ft_memchr(const void *arr, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t count);
+int		ft_atoi(const char *str);
+void	*ft_calloc(size_t num, size_t size);
+char	*ft_strdup(const char *str);
 
 #endif
