@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fooswyn <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/10 19:09:09 by fooswyn           #+#    #+#             */
-/*   Updated: 2021/10/12 18:15:43 by fooswyn          ###   ########.fr       */
+/*   Created: 2021/10/18 15:02:03 by fooswyn           #+#    #+#             */
+/*   Updated: 2021/10/18 15:02:22 by fooswyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *str)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int		i;
-	char	*str2;
+	unsigned int	i;
+	char			*str;
 
 	i = 0;
-	str2 = malloc(ft_strlen(str));
-	if (!str2)
-		return (0);
-	while (str[i])
+	str = malloc(ft_strlen(s) + 1);
+	if (!str)
+		return (str);
+	while (s[i])
 	{
-		str2[i] = str[i];
+		str[i] = f(i, s[i]);
 		i++;
 	}
-	str2[i] = 0;
-	return (str2);
+	str[i] = 0;
+	return (str);
 }

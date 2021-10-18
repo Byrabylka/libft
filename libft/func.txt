@@ -1,0 +1,1 @@
+cd ~/Desktop/projects/libft && rm *.a && gcc -c *.c && ar -r libft.a *.o && rm *.o && cd ../libft-unit-test && make f && cd ..//libft

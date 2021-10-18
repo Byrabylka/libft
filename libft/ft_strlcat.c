@@ -5,6 +5,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t count)
 	size_t	i;
 
 	i = 0;
+	if (!dst)
+		return(ft_strlcpy(dst, src, count));
 	while (dst[i])
 		i++;
 	while ((i + 1 < count) && src[i])

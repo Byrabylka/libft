@@ -1,31 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fooswyn <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/10 19:09:09 by fooswyn           #+#    #+#             */
-/*   Updated: 2021/10/12 18:15:43 by fooswyn          ###   ########.fr       */
+/*   Created: 2021/10/18 13:31:59 by fooswyn           #+#    #+#             */
+/*   Updated: 2021/10/18 13:32:00 by fooswyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *str)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
 	int		i;
-	char	*str2;
+	int		j;
+	char	*str;
 
 	i = 0;
-	str2 = malloc(ft_strlen(str));
-	if (!str2)
-		return (0);
-	while (str[i])
+	j = 0;
+	str = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	if (!str)
+		return (str);
+	while (s1[i])
 	{
-		str2[i] = str[i];
+		str[i] = s1[i];
 		i++;
+	}	
+	while (s2[j])
+	{
+		str[i + j] = s2[j];
+		j++;
 	}
-	str2[i] = 0;
-	return (str2);
+	str[i + j] = 0;
+	return (str);
 }
