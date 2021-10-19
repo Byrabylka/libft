@@ -6,15 +6,15 @@
 /*   By: fooswyn <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 18:24:45 by fooswyn           #+#    #+#             */
-/*   Updated: 2021/10/11 18:26:55 by fooswyn          ###   ########.fr       */
+/*   Updated: 2021/10/19 19:13:24 by fooswyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memchr(const void *arr, int c, size_t n)
+void	*ft_memchr(const void *arr, int c, size_t n)
 {
-	size_t	i;
+	size_t			i;
 	unsigned char	*str_copy;
 	unsigned char	ch;
 
